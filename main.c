@@ -13,19 +13,18 @@ int main(int argc, char **argv)
 	char **comd = NULL;
 	int wstatus = 0, i;
 	(void) argc;
-	while(1)
+	while (1)
 	{
 		nline = _getline();
-		if(nline == NULL)
+		if (nline == NULL)
 		{
-			if(isatty(STDIN_FILENO) == 1)
-				write(STDOUT_FILENO, "\n",1);
-			return wstatus;
+			if (isatty(STDIN_FILENO) == 1)
+				write(STDOUT_FILENO, "\n", 1);
+			return (wstatus);
 		}
 		comd = ftoken(nline);
-		if(comd == NULL)
+		if (comd == NULL)
 			continue;
 		wstatus = forkf(comd, argv);
 	}
 }
-

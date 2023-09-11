@@ -7,11 +7,12 @@
 void ffree(char **array)
 {
 	int i = 0;
-	if(array == NULL)
+
+	if (array == NULL)
 	{
 		return;
 	}
-	while(array)
+	while (array)
 	{
 		free(array[i]);
 		array[i] = NULL;
@@ -20,4 +21,3 @@ void ffree(char **array)
 	free(array);
 	array  NULL;
 }
-

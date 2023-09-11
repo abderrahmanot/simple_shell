@@ -13,13 +13,12 @@
 #include <errno.h>
 
 extern char **environ
-#define DELIM " \t\r\n\a";
+#define DELIM " \t\r\n\a"
 
 char **ftoken(char *nline);
 char *_getline();
 void ffree(char **array);
-int forkf(char **comd, char **argv)
-
+int forkf(char **comd, char **argv);
 char *_strdup(const char *s);
 char *_strncpy(char *dest, char *src, int n);
 int _strlen(char *s);
