@@ -2,7 +2,7 @@
 /**
  * _getenv - function variables
  * @var: string
- * return: NULL
+ * Return: NULL
  */
 char *_getenv(char *var)
 {
