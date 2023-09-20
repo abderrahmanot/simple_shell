@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * _strlen - function that counts the length of a string
  * @s: string input
@@ -47,6 +48,7 @@ int _strcmp(char *s1, char *s2)
 	return (cmp);
 }
 
+
 /**
  * _strdup - duplicate a string
  * @str: string
@@ -76,5 +78,3 @@ char *_strdup(const char *str)
 	}
 	return (str2);
 }
-
-

@@ -20,6 +20,7 @@ char *_getline();
 void ffree(char **array);
 int forkf(char **comd, char **argv);
 char *_getenv(char *var);
+
 char *_strdup(const char *s);
 char *_strncpy(char *dest, char *src, int n);
 int _strlen(char *s);
@@ -31,4 +32,3 @@ char *_strcpy(char *dest, char *src);
 
 
 #endif
-

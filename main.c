@@ -13,13 +13,13 @@ int main(int argc, char **argv)
 	char **comd = NULL;
 	int wstatus = 0;
 	(void) argc;
-
+	
 	while (1)
 	{
 		nline = _getline();
 		if (nline == NULL)
 		{
-			if (isatty(STDIN_FILENO) == 1)
+			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			return (wstatus);
 		}
