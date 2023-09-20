@@ -6,11 +6,10 @@
  */
 char **ftoken(char *nline)
 {
-	char *tokens;
-	char **comd = NULL, *tmp;
+	char *tokens, **comd = NULL, *tmp;
 	int i = 0, cpt = 0;
 
-	if (!nline)
+	if (!nline
 		return (NULL);
 	tmp = _strdup(nline);
 	tokens = strtok(tmp, DELIM);
@@ -34,7 +33,6 @@ char **ftoken(char *nline)
 	{
 		free(nline);
 		nline = NULL;
-		free(tmp);
 		tmp = NULL;
 		return (NULL);
 	}
