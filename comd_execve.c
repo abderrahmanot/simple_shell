@@ -11,14 +11,7 @@ int forkf(char **comd, char **argv)
 	pid_t pidchild;
 	int wstatus;
 
-	if (*comd == NULL)
-		return (EXIT_FAILURE);
 	pidchild = fork();
-	if (pidchild == -1)
-	{
-		perror("Error");
-		return (-1);
-	}
 	if (pidchild == 0)
 	{
 		if (execve(comd[0], comd, environ) == -1)

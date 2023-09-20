@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 			return (wstatus);
 		}
 		comd = ftoken(nline);
-		if (comd == NULL)
+		if (!comd)
 			continue;
 		else
 			wstatus = forkf(comd, argv);
