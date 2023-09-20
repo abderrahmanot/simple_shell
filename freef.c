@@ -6,17 +6,16 @@
  */
 void ffree(char **array)
 {
-	int i = 0;
+	int i;
 
-	if (array == NULL)
+	if (!array)
 	{
 		return;
 	}
-	while (array)
+	for (i = 0; array[i]; i++)
 	{
 		free(array[i]);
 		array[i] = NULL;
-		i++;
 	}
 	free(array);
 	array = NULL;

@@ -10,7 +10,7 @@ char *_getline()
 	size_t nb = 0;
 	ssize_t n;
 
-	if (isatty(STDIN_FILENO) == 1)
+	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
 	n = getline(&nline, &nb, stdin);
 	if (n == -1)
