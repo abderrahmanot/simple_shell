@@ -12,8 +12,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
-extern char **environ
-#define DELIM " \t\r\n\a"
+extern char **environ;
+#define DELIM " \n\t"
 
 char **ftoken(char *nline);
 char *_getline();
