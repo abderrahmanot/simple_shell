@@ -2,14 +2,13 @@
 /**
  * ftoken- function that extracts tokens of a string
  * @nline: string
- * @delim: delimiter
  * Return: pointer to the next token or NULL
  */
 char **ftoken(char *nline)
 {
 	char *tokens;
 	char **comd, *tmp;
-	unsigned int i, cpt = 0;
+	unsigned int i = 0, cpt = 0;
 
 	if (nline == NULL)
 		return (NULL);
