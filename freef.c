@@ -19,5 +19,5 @@ void ffree(char **array)
 		i++;
 	}
 	free(array);
-	array  NULL;
+	array = NULL;
 }
