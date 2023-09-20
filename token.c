@@ -7,18 +7,22 @@
 char **ftoken(char *nline)
 {
 	char *tokens;
-	char **comd, *tmp;
-	unsigned int i = 0, cpt = 0;
+	char **comd = NULL, *tmp;
+	int i = 0, cpt = 0;
 
-	if (nline == NULL)
+	if (!nline)
 		return (NULL);
 	tmp = _strdup(nline);
 	tokens = strtok(tmp, DELIM);
 	if (tokens == NULL)
+	{
 		free(tmp);
+		tmp = NULL;
 		free(nline);
+		nline = NULL;
 		return (NULL);
-	for (i = 0; tokens[i] != '\0'; i++)
+	}
+	while (tokens)
 	{
 		cpt++;
 		tokens = strtok(NULL, DELIM);
@@ -26,18 +30,22 @@ char **ftoken(char *nline)
 	free(tmp);
 	tmp = NULL;
 	comd = malloc(sizeof(char *) * (cpt + 1));
-	if (comd == NULL)
-		free(nline);
-		return (NULL);
-	tokens = strtok(tmp, DELIM);
-	for (i = 0; tokens[i] != '\0'; i++)
+	if (!comd)
 	{
-		comd[i] = tokens;
-		tokens = strtok(NULL, DELIM);
-
+		free(nline);
+		nline = NULL;
+		free(tmp);
+		tmp = NULL;
+		return (NULL);
 	}
+	tokens = strtok(nline, DELIM);
+	while (tokens)
+	{
+		comd[i++] = _strdup(tokens);
+		tokens = strtok(NULL, DELIM);
+	}
+	comd[i] = NULL;
 	free(nline);
 	nline = NULL;
-	comd[i] = NULL;
 	return (comd);
 }
