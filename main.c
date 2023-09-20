@@ -11,8 +11,9 @@ int main(int argc, char **argv)
 {
 	char *nline = NULL;
 	char **comd = NULL;
-	int wstatus = 0, i;
+	int wstatus = 0;
 	(void) argc;
+
 	while (1)
 	{
 		nline = _getline();
@@ -25,6 +26,7 @@ int main(int argc, char **argv)
 		comd = ftoken(nline);
 		if (comd == NULL)
 			continue;
-		wstatus = forkf(comd, argv);
+		else
+			wstatus = forkf(comd, argv);
 	}
 }
