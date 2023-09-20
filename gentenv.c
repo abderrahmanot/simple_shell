@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * forkf - Executes commands
+ * _getenv - function variables
  * @var: string
  * return: NULL
  */
-char *_gentenv(char *var)
+char *_getenv(char *var)
 {
 	char *env, *tmp, *key, *value;
 	int i;
@@ -17,7 +17,7 @@ char *_gentenv(char *var)
 		{
 			value = strtok(NULL, "\n");
 			env = _strdup(value);
-			free(tmp);			
+			free(tmp);
 			return (env);
 		}
 		free(tmp);
