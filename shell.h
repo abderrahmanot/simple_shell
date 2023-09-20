@@ -6,19 +6,21 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
-#include <wait.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
 
-extern char **environ
-#define DELIM " \t\r\n\a"
+extern char **environ;
+#define DELIM " \n\t"
 
 char **ftoken(char *nline);
 char *_getline();
 void ffree(char **array);
 int forkf(char **comd, char **argv);
+char *_getenv(char *var);
+
 char *_strdup(const char *s);
 char *_strncpy(char *dest, char *src, int n);
 int _strlen(char *s);
@@ -30,4 +32,3 @@ char *_strcpy(char *dest, char *src);
 
 
 #endif
-

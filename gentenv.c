@@ -4,7 +4,7 @@
  * @var: string
  * return: NULL
  */
-char *_getenv(char *var)
+char *_gentenv(char *var)
 {
 	char *env, *tmp, *key, *value;
 	int i;
