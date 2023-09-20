@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
-#include <wait.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 #include <limits.h>
 #include <fcntl.h>
@@ -19,6 +19,7 @@ char **ftoken(char *nline);
 char *_getline();
 void ffree(char **array);
 int forkf(char **comd, char **argv);
+char *_getenv(char *var);
 char *_strdup(const char *s);
 char *_strncpy(char *dest, char *src, int n);
 int _strlen(char *s);

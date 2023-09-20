@@ -15,6 +15,7 @@ char *_getline()
 	n = getline(&nline, &nb, stdin);
 	if (n == -1)
 	{
+		free(nline);
 		return (NULL);
 	}
 	return (nline);
